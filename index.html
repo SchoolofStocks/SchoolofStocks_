@@ -31,10 +31,10 @@
   <h1 id="join">Join the free School of Stocks community</h1>
   <p class="sub">A short market wrap every morning and one trading lesson a day, in plain English and Hinglish. Free. No tips, no calls, no promises.</p>
 
-  <a class="btn primary" href="https://whatsapp.com/channel/0029Vb9EnMkLNSZyjc4nwf35">
+  <a class="btn primary join" data-target="whatsapp" href="https://sos-olympus-hq.vercel.app/go/whatsapp?src=ig">
     <strong>Join on WhatsApp</strong><span>Free channel: daily market wrap and lessons on your phone.</span>
   </a>
-  <a class="btn primary" href="https://t.me/schoolofstocks_in">
+  <a class="btn primary join" data-target="telegram" href="https://sos-olympus-hq.vercel.app/go/telegram?src=ig">
     <strong>Join on Telegram</strong><span>Free channel: the market wrap every morning at 11:00 AM.</span>
   </a>
 
@@ -47,5 +47,11 @@
 
   <footer>Educational only, not financial advice.<br>School of Stocks does not give tips, calls or signals.</footer>
 </main>
+<script>
+// Join buttons go through tracked links (counted by source in HQ). Visitors from Instagram get
+// src=ig; a link to this page with ?src=li (LinkedIn), fb, yt, qr ... passes that source on.
+(function(){var m=/[?&]src=([a-z0-9_-]{1,24})/i.exec(location.search);if(!m)return;var s=m[1].toLowerCase();
+document.querySelectorAll('a.join').forEach(function(a){a.href='https://sos-olympus-hq.vercel.app/go/'+a.getAttribute('data-target')+'?src='+s;});})();
+</script>
 </body>
 </html>
